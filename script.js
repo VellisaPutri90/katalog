@@ -3,6 +3,23 @@ const dialogImage = productDialog.querySelector('.dialog-image');
 const dialogTitle = productDialog.querySelector('#dialog-title');
 const dialogDescription = productDialog.querySelector('.dialog-description');
 const confirmationDialog = document.querySelector('.confirmation-dialog');
+const menuToggle = document.querySelector('.menu-toggle');
+const navigation = document.querySelector('#site-navigation');
+
+menuToggle.addEventListener('click', () => {
+	const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+	menuToggle.setAttribute('aria-expanded', String(!isExpanded));
+	menuToggle.setAttribute('aria-label', isExpanded ? 'Open navigation menu' : 'Close navigation menu');
+	navigation.classList.toggle('is-open', !isExpanded);
+});
+
+navigation.querySelectorAll('a').forEach((link) => {
+	link.addEventListener('click', () => {
+		menuToggle.setAttribute('aria-expanded', 'false');
+		menuToggle.setAttribute('aria-label', 'Open navigation menu');
+		navigation.classList.remove('is-open');
+	});
+});
 
 document.querySelectorAll('.product-1').forEach((product) => {
 	const imageBox = product.querySelector('.img-box');
