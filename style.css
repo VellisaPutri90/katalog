@@ -1,0 +1,308 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: rgb(189, 183, 175);
+    background-image: url(bg/Dark\ academia\ images.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img-box {
+    width: 200px;
+    height: 200px;
+}
+
+.card {
+    max-width: 750px;
+    width: 100%;
+    margin: 24px auto;
+    box-shadow: 0 16px 36px #24231f45;
+    background-color: rgba(14, 14, 14, 0.75);
+    display: block;
+    margin: 20px;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid rgb(189, 183, 175);
+    color: rgb(189, 183, 175);
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 1000;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+nav {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.nav a {
+    text-decoration: none;
+    color: rgb(189, 183, 175);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: 0.25s ease;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+    color: rgb(229, 212, 189);
+    cursor: pointer;
+}
+
+.hero {
+    background-color: rgb(229, 212, 189);
+    padding: 10px;
+    margin: 20px;
+    min-height: 20px;
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    color: rgb(31, 31, 42);
+    transition: 0.5s ease;
+    box-shadow: 5px 5px 5px rgb(91, 88, 85, 0.7);
+}
+
+.hero:hover {
+    transform: scale(1.02);
+}
+
+.hero h1 {
+    align-self: center;
+    line-height: .82;
+    text-transform: uppercase;
+}
+
+.judul-catalog {
+    margin: 15px;
+    padding: 5px;
+    color: rgb(189, 183, 175);
+}
+
+.judul-catalog p {
+    font-size: 9px;
+    text-decoration: underline;
+}
+
+hr {
+    color: rgb(189, 183, 175);
+}
+
+.product {
+    margin: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    transition: 0.5s ease;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-content: center;
+}
+
+.product-1 {
+    background-color: rgb(189, 183, 175);
+    border: 2px solid rgb(229, 212, 189);
+}
+
+.product-1 h2, p {
+    padding: 5px;
+}
+
+.product-1 h2 {
+    text-transform: uppercase;
+    font-weight: 1000;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+}
+
+.product-1:hover {
+    transform: scale(1.02);
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+
+.img-box[role="button"]:focus-visible {
+    outline: 3px solid rgb(35, 34, 34);
+    outline-offset: 3px;
+}
+
+.product-dialog {
+    position: fixed;
+    inset: 50% auto auto 50%;
+    transform: translate(-50%, -50%);
+    width: min(620px, calc(100% - 32px));
+    max-height: calc(100% - 32px);
+    padding: 0;
+    border: 2px solid rgb(229, 212, 189);
+    background: rgb(35, 34, 34);
+    color: rgb(229, 212, 189);
+    box-shadow: 0 20px 60px #0009;
+}
+
+.product-dialog[open] {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+}
+
+.product-dialog::backdrop {
+    background: #000a;
+    backdrop-filter: blur(3px);
+}
+
+.dialog-image {
+    display: block;
+    min-height: 280px;
+    max-height: 70vh;
+    object-fit: cover;
+}
+
+.dialog-copy {
+    padding: 28px;
+}
+
+.dialog-copy h2 {
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.dialog-description {
+    line-height: 1.6;
+}
+
+.dialog-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 36px;
+    height: 36px;
+    border: 0;
+    background: rgb(35, 34, 34);
+    color: rgb(229, 212, 189);
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.purchase-button,
+.confirmation-close {
+    margin: 12px 5px 0;
+    padding: 10px 16px;
+    border: 1px solid rgb(229, 212, 189);
+    background: rgb(229, 212, 189);
+    color: rgb(35, 34, 34);
+    font: inherit;
+    cursor: pointer;
+}
+
+.purchase-button:hover,
+.confirmation-close:hover {
+    background: rgb(189, 183, 175);
+}
+
+.confirmation-dialog {
+    position: fixed;
+    inset: 50% auto auto 50%;
+    transform: translate(-50%, -50%);
+    width: min(300px, calc(100% - 32px));
+    padding: 20px;
+    border: 2px solid rgb(229, 212, 189);
+    background: rgb(35, 34, 34);
+    color: rgb(229, 212, 189);
+    text-align: center;
+    box-shadow: 0 16px 40px #0009;
+}
+
+.confirmation-dialog::backdrop {
+    background: #000a;
+}
+
+@media (max-width: 520px) {
+    .product-dialog[open] {
+        grid-template-columns: 1fr;
+    }
+
+    .dialog-image {
+        min-height: 0;
+        max-height: 42vh;
+    }
+
+    .dialog-copy {
+        padding: 20px;
+    }
+}
+
+.motivation {
+    padding: 10px;
+    margin: 10px;
+    font-size: 15px;
+    background-color: rgb(189, 183, 175, 0.5);
+}
+
+.box {
+    padding: 10px;
+    color: rgb(170, 164, 156);
+    background-color: rgb(35, 34, 34);
+}
+
+.contact {
+    padding: 10px;
+    margin: 10px;
+}
+
+.box-contact {
+    background-color: rgb(35, 34, 34);
+    color: rgb(170, 164, 156);
+    padding: 10px;
+    text-align: center;
+}
+
+.box-contact p {
+    text-decoration: underline;
+}
+
+.credit {
+    color: rgb(189, 183, 175);
+    text-align: center;
+}
+
+.credit a {
+    text-decoration: none;
+    color: rgb(189, 183, 175);
+}
+
+.credit a:hover {
+    color: rgb(229, 212, 189);
+    cursor: pointer;
+}
